@@ -18,6 +18,7 @@ jobs:
           git config --global user.name 'mastroja'
           git config --global user.email 'mastroiannij1@gmail.com'
 
+          git checkout -b git checkout -b $(date +sync %Y-%m-%d)
           # "git checkout master" is unnecessary, already here by default
           git pull --unshallow  # this option is very important, you would get
                                 # complains about unrelated histories without it.
@@ -27,9 +28,9 @@ jobs:
           git remote add upstream https://github.com/OpenSystems-CCHMC/test-host
           git fetch upstream
 
-          git checkout -b git checkout -b $(date +kirkversion%Y%m%d%H%M%S)
+          git checkout -b git checkout -b $(date +sync %Y-%m-%d)
           git merge --no-edit upstream/main
-          git push origin $(date +kirkversion%Y%m%d%H%M%S)
+          git push origin $(date +sync %Y-%m-%d)
           git pr create
 
           # git checkout main
