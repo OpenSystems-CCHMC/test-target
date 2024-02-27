@@ -1,6 +1,6 @@
 # .github/workflows/main.yml
 
-name: Merge test
+name: Merge test 2
 on:
   push
 jobs:
@@ -9,8 +9,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
-      - name: Merge upstream
+      - uses: actions/checkout@v4
+      - name: Merge upstream 2
         run: |
           git config --global user.name 'mastroja'
           git config --global user.email 'mastroiannij1@gmail.com'
