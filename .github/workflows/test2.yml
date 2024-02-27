@@ -26,7 +26,7 @@ jobs:
 
           git checkout -B sync-"$(date +"%D")"
           git merge --no-edit upstream/main
-          git push sync-"$(date +"%D")"
+          git push origin sync-"$(date +"%D")"
 
           # git checkout main
           # git merge --no-edit upstream/main
