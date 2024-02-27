@@ -27,6 +27,7 @@ jobs:
           git checkout -b Fork_sync
           git merge --no-edit upstream/main
           git push origin main
+          gh pr create --base main --head Fork_sync
          
 
           # git checkout main
