@@ -7,7 +7,7 @@ on:
      # effective frequency you will get
     - cron:  '* * * * *'
 permissions:
-  contents: write
+  contents: write, read
 jobs:
   merge:
     runs-on: ubuntu-latest
