@@ -2,7 +2,10 @@
 
 name: Merge test
 on:
-  push
+  schedule:
+     # actually, ~5 minutes is the highest
+     # effective frequency you will get
+  - cron:  '* * * * *'
 permissions:
   contents: write
 jobs:
