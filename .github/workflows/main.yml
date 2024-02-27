@@ -1,11 +1,8 @@
 # .github/workflows/main.yml
 
-name: Merge upstream branches
+name: Merge test
 on:
-  schedule:
-     # actually, ~5 minutes is the highest
-     # effective frequency you will get
-    - cron:  '* * * * *'
+  push
 permissions:
   contents: write
 jobs:
@@ -18,7 +15,6 @@ jobs:
           git config --global user.name 'mastroja'
           git config --global user.email 'mastroiannij1@gmail.com'
 
-          git checkout -b $(date +sync %Y-%m-%d)
           # "git checkout master" is unnecessary, already here by default
           git pull --unshallow  # this option is very important, you would get
                                 # complains about unrelated histories without it.
@@ -28,9 +24,9 @@ jobs:
           git remote add upstream https://github.com/OpenSystems-CCHMC/test-host
           git fetch upstream
 
-          git checkout -b $(date +sync %Y-%m-%d)
+          git checkout -b Fork_sync
           git merge --no-edit upstream/main
-          git push origin $(date +sync %Y-%m-%d)
+          git push origin Fork_sync
           git pr create
 
           # git checkout main
