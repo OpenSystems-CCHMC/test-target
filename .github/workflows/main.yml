@@ -6,8 +6,6 @@ on:
      # actually, ~5 minutes is the highest
      # effective frequency you will get
   - cron:  '00 00 * * sun'
-permissions:
-  contents: write
 jobs:
   merge:
     runs-on: ubuntu-latest
